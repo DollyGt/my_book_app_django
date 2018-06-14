@@ -1,0 +1,20 @@
+{% extends 'books/base.html' %}
+{% block content %}
+
+<h2>My Book App</h2>
+
+
+
+<ul>
+   {% for book in books %}
+       <h1>{{ book.name }}</h1>
+       <li>Author - {{ book.author }}</li>
+       <li>ISBN - {{ book.ISBN }}</li>
+       
+       <img src='{{ MEDIA_URL}}{{book.image}}'>
+   {% endfor %}
+</ul>
+
+<a href='{% url 'add_book' %}'>Add book</a>
+
+{% endblock content %}
